@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SM KOREA 홈페이지</title>
+<meta name="description" content="SM KOREA, Ulsan, Korea. Inspection, maintenance and LOAD TEST of lifeboats, fire-fighting equipment (FFE) and life-saving appliances (LSA) for merchant, naval and offshore vessels. 구명정·소방설비 점검·정비 전문.">
+<meta name="keywords" content="lifeboat inspection Korea, FFE service Korea, CO2 system inspection, LSA inspection, load test, naval vessel repair Korea, Ulsan, 구명정 점검, 소방설비 점검">
+<link rel="preload" as="image" href="img/hero-lifeboat.webp" imagesrcset="img/hero-lifeboat-s.webp 720w, img/hero-lifeboat.webp 1400w" imagesizes="100vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* 레이아웃: 전체 화면 히어로 슬라이드 → 스크롤 고정형 서비스 무대(서비스별 배경색 전환) → 절차 → 분야 가로 스크롤 → 인증 → 문의 */
+  color-scheme:light;
+  --ink:#0b2a43;
+  --brand:#122b88;
+  --sig:#f26b21;
+  --paper:#ffffff;
+  --mist:#eef2f5;
+  --mute:#55677a;
+  --line:#d5dde4;
+  --body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --display:var(--body);
+  --xl:"Barlow Condensed","Noto Sans KR",sans-serif;
+  --gut:clamp(20px,5vw,72px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.75 var(--body);word-break:keep-all;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sig);outline-offset:3px}
+.eyebrow{display:block;font:700 clamp(28px,3.4vw,46px)/1.1 var(--body);letter-spacing:-.01em;text-transform:uppercase;color:var(--ink)}
+.contact .eyebrow{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--brand);color:#fff;font-weight:600;font-size:15px;padding:16px 28px;border-radius:999px;text-decoration:none;border:0;transition:transform .25s,box-shadow .25s}
+.btn::after{content:"\2192";font-size:17px;line-height:1;transition:transform .25s}
+.btn:hover::after{transform:translateX(4px)}
+.btn:hover{box-shadow:0 10px 24px rgba(18,43,136,.28)}
+.hero .btn:not(.ghost){background:#fff;color:var(--ink)}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1px #fff;background:rgba(255,255,255,.1)}
+.sec{padding:clamp(72px,10vw,140px) var(--gut)}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px);max-width:44em}
+.sec-head h2{font-size:clamp(18px,1.7vw,24px);line-height:1.5;font-weight:500;letter-spacing:-.01em}
+.sec-head p{color:var(--mute);font-size:clamp(16px,1.4vw,18px)}
+
+/* 헤더 */
+.hd{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:28px;height:72px;padding:0 var(--gut);color:#fff;transition:background .35s,color .35s,box-shadow .35s}
+.hd.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.logo{display:flex;align-items:center;gap:12px;white-space:nowrap;text-decoration:none;font:700 21px/1 var(--display);letter-spacing:.08em}
+.logo img{height:34px;width:auto;filter:brightness(0) invert(1);transition:filter .35s}
+.hd.solid .logo img{filter:none}
+.hd nav{display:flex;align-items:center;gap:clamp(16px,2.2vw,34px);font-weight:500;font-size:15px;letter-spacing:-.005em}
+.hd nav a{text-decoration:none;padding:6px 0;background:linear-gradient(var(--sig),var(--sig)) 0 100%/0 2px no-repeat;transition:background-size .3s}
+.hd nav a:hover,.hd nav a.on{background-size:100% 2px}
+.hr{display:flex;align-items:center;gap:18px}
+.cta{font-size:14px;font-weight:600;text-decoration:none;padding:9px 16px;border-radius:999px;box-shadow:inset 0 0 0 1px currentColor;transition:background .25s,color .25s,box-shadow .25s}
+.cta:hover{background:var(--sig);color:#fff;box-shadow:none}
+.lang{display:flex;align-items:center;font:500 13px/1 var(--body);letter-spacing:.06em}
+.lang button{border:0;background:none;padding:6px 9px;color:inherit;font:inherit;letter-spacing:inherit;opacity:.5;transition:opacity .2s}
+.lang button+button{box-shadow:-1px 0 0 rgba(128,128,128,.55)}
+.lang button:hover{opacity:.85}
+.lang button[aria-pressed="true"]{opacity:1;font-weight:700}
+.menu{display:none;background:none;border:0;padding:8px;width:44px;height:44px}
+.menu span{display:block;height:2px;background:currentColor;margin:6px 0;transition:transform .3s,opacity .3s}
+@media (max-width:860px){
+  .hr{margin-left:auto;order:1}.cta{display:none}
+  .menu{display:block;order:2}
+  .hd nav{position:fixed;inset:72px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:#fff;color:var(--ink);padding:8px var(--gut) 24px;box-shadow:0 20px 40px rgba(11,42,67,.18);transform:translateY(-12px);opacity:0;visibility:hidden;transition:.3s}
+  .hd nav.open{transform:none;opacity:1;visibility:visible}
+  .hd nav a{padding:14px 0;border-bottom:1px solid var(--line)}
+}
+
+/* 히어로 */
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:var(--ink);color:#fff;--mx:0;--my:0}
+.slide{position:absolute;inset:-16px;opacity:0;transition:opacity 1.2s;transform:translate(calc(var(--mx)*-14px),calc(var(--my)*-10px))}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.slide.on img{animation:kb 9s ease-out forwards}
+@keyframes kb{from{transform:scale(1.14)}to{transform:scale(1.02)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,44,.88) 0%,rgba(7,26,44,.55) 46%,rgba(7,26,44,.12) 100%),linear-gradient(0deg,rgba(7,26,44,.7),rgba(7,26,44,0) 40%)}
+.hero-copy{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(120px,20vh,200px);max-width:880px}
+.hc{position:absolute;left:0;bottom:0;width:100%;display:grid;gap:18px;opacity:0;visibility:hidden;transform:translateY(26px);transition:opacity .8s,transform .8s,visibility .8s}
+.hc.on{opacity:1;visibility:visible;transform:none;position:relative}
+.hc .t{font-size:clamp(32px,4.6vw,64px);line-height:1.22;font-weight:700;letter-spacing:-.03em}
+.hc .s{font:700 clamp(20px,2.6vw,32px)/1.1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:#ffb48a}
+.hc p{font-size:clamp(15px,1.25vw,17px);max-width:34em;opacity:.9}
+.hero-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.hero-ctrl{position:absolute;z-index:2;left:var(--gut);bottom:44px;display:flex;align-items:center;gap:16px}
+.ar{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:none;color:#fff;font-size:18px;transition:background .25s,color .25s}
+.ar:hover{background:#fff;color:var(--ink)}
+.hero-ctrl{gap:10px}
+.pp{width:30px;height:46px;border:0;background:none;display:grid;place-items:center;color:#fff}
+.pp i{display:block;width:10px;height:12px;border-left:3px solid;border-right:3px solid}
+.pp.paused i{width:0;height:0;border:7px solid transparent;border-left:11px solid #fff;border-right:0;margin-left:3px}
+.dots{display:flex;gap:10px}
+.dots button{width:44px;height:22px;border:0;background:none;padding:0;position:relative}
+.dots button::before{content:"";position:absolute;left:0;right:0;top:10px;height:3px;border-radius:2px;background:rgba(255,255,255,.35)}
+.dots button[aria-current="true"]::before{background:#fff}
+.cue{position:absolute;z-index:2;right:var(--gut);bottom:40px;font:700 14px/1 var(--display);letter-spacing:.24em;text-decoration:none;display:flex;align-items:center;gap:12px}
+.cue::after{content:"";width:1px;height:54px;background:#fff;transform-origin:top;animation:cue 2s infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* 서비스 무대 */
+.stage{position:relative}
+.stage-intro{padding:clamp(72px,9vw,120px) var(--gut) clamp(32px,4vw,56px)}
+.stage-intro .sec-head{margin:0}
+.panel{position:relative;background:var(--g);color:#fff;overflow:hidden;padding:clamp(40px,7vw,80px) var(--gut) clamp(48px,7vw,80px);display:grid;gap:22px}
+.stage:not(.pin) .panel>.word{position:absolute;left:var(--gut);top:14px;font-size:clamp(48px,17vw,120px)}
+.stage:not(.pin) .obj{width:min(78%,var(--w),420px);margin-top:34px}
+.stage:not(.pin) .panel:nth-of-type(4) .obj{width:150px}
+.word{font:800 clamp(64px,19vw,330px)/.82 var(--xl);letter-spacing:-.02em;text-transform:uppercase;color:rgba(255,255,255,.07);white-space:nowrap;pointer-events:none}
+.obj{position:relative;justify-self:center;width:min(100%,var(--w));perspective:1400px}
+.obj .tilt{position:relative;transform-style:preserve-3d;transform:translate3d(calc(var(--sx,0)*1vw),calc(var(--sy,0)*1vh),0) scale(var(--sc,1)) rotateY(calc(var(--tx,0)*9deg)) rotateX(calc(var(--ty,0)*-6deg)) rotate(calc(var(--sr,0)*1deg));transition:transform .25s ease-out;will-change:transform}
+.obj img{width:100%;height:auto;filter:drop-shadow(0 36px 40px rgba(7,26,44,.38))}
+.obj.fade img{-webkit-mask-image:linear-gradient(#0000 0,#000 16%);mask-image:linear-gradient(#0000 0,#000 16%)}
+.obj .b{position:absolute;inset:0;margin:auto;opacity:var(--ab,0)}
+.obj .a{opacity:calc(1 - var(--ab,0))}
+.obj .sway{animation:sway 6s ease-in-out infinite;transform-origin:50% -60%}
+.obj .bob{animation:bob 5.5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
+@keyframes bob{0%,100%{transform:translateY(-10px)}50%{transform:translateY(12px)}}
+.copy{position:relative;z-index:2;display:grid;gap:12px;justify-items:start;max-width:34em}
+.copy .eyebrow{color:#fff;opacity:.85;font:600 14px/1 var(--body);letter-spacing:.02em;text-transform:none}
+.copy h3{font-size:clamp(26px,3.4vw,48px);font-weight:700;line-height:1.2;letter-spacing:-.02em}
+.copy p{font-size:clamp(15px,1.3vw,18px);opacity:.95}
+.more{display:inline-block;margin-top:6px;background:none;border:0;font-size:14px;border-radius:999px;padding:11px 22px;font-weight:700;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);transition:background .25s,color .25s}
+.more:hover,.panel.open .more{background:#fff;color:var(--ink)}
+.sheet{display:none;position:relative;z-index:2;background:rgba(255,255,255,.94);color:var(--ink);border-radius:16px;padding:20px;max-width:640px}
+.sheet h4{margin:0 0 12px;font:700 15px/1 var(--display);letter-spacing:.2em;color:var(--mute)}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{display:flex}
+.chips button{background:var(--mist);border:0;border-radius:999px;padding:6px 13px;color:var(--ink);text-align:left;font:700 14px/1.3 var(--display);letter-spacing:.06em;transition:background .2s,color .2s}
+.chips button::before{content:"\25B6";font-size:9px;margin-right:7px;color:var(--sig);vertical-align:1px}
+.chips button:hover{background:var(--ink);color:#fff}
+.sheet .tip{margin:-4px 0 12px;font-size:13px;color:var(--mute)}
+.vid{margin-top:2px;background:#fff;color:var(--ink);border:0;border-radius:999px;padding:11px 20px;font-weight:700}
+.vid::before{content:"\25B6";font-size:11px;margin-right:8px;color:var(--sig)}
+.chips small{font-weight:500;letter-spacing:.02em;opacity:.7}
+.stage-tabs{display:none}
+.stage:not(.gl) .bgs,.stage:not(.gl) canvas.gl,.stage:not(.gl) .hot,.stage:not(.gl) .draghint{display:none}
+.stage.gl .obj{display:none}
+canvas.gl{position:absolute;inset:0;width:100%;height:100%;z-index:1;cursor:grab;touch-action:pan-y}
+canvas.gl.grabbing{cursor:grabbing}
+.bgs,.bgs>div{position:absolute;inset:0}
+.bgs>div{opacity:0;transition:opacity .9s;background:var(--g);overflow:hidden}
+.bgs>div.on{opacity:1}
+.stage.gl .panel{background:none;z-index:2;pointer-events:none}
+.stage.gl .panel>.word{display:none}
+.stage.gl .copy,.stage.gl .sheet{pointer-events:auto}
+.stage.gl .stage-tabs{z-index:4}
+.hot{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.hs{position:absolute;left:0;top:0;margin:-11px 0 0 -11px;width:22px;height:22px;padding:0;border:0;background:none;opacity:0;transition:opacity .3s}
+.hs i{position:absolute;inset:0;border-radius:50%;background:#fff;box-shadow:0 0 0 5px rgba(255,255,255,.35),0 2px 8px rgba(0,0,0,.3)}
+.hs i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid #fff;animation:ping 2s infinite}
+@keyframes ping{from{transform:scale(.7);opacity:1}to{transform:scale(1.9);opacity:0}}
+.hs span{position:absolute;left:32px;top:50%;transform:translateY(-50%) translateX(-6px);white-space:nowrap;background:rgba(11,42,67,.92);color:#fff;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.35;text-align:left;opacity:0;visibility:hidden;transition:.25s}
+.hs span b{display:block;font-size:15px}
+.hs:hover span,.hs:focus-visible span,.hs.open span{opacity:1;visibility:visible;transform:translateY(-50%)}
+.skip{display:none}
+.stage.pin .skip{display:inline-flex;align-items:center;gap:8px;position:absolute;z-index:4;right:var(--gut);top:92px;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;padding:10px 16px;font-size:14px;font-weight:600;backdrop-filter:blur(8px);transition:background .25s,color .25s}
+.stage.pin .skip:hover{background:#fff;color:var(--ink)}
+.draghint{position:absolute;z-index:3;left:50%;transform:translateX(-50%);top:96px;background:rgba(255,255,255,.9);color:var(--ink);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:700;pointer-events:none;transition:opacity .5s}
+.dragged .draghint{opacity:0}
+.stage.pin .rail{height:360vh}
+.stage.pin .sticky{position:sticky;top:0;height:100vh;overflow:hidden}
+.stage.pin .panel{position:absolute;inset:0;display:block;padding:0;opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s}
+.stage.pin .panel.on{opacity:1;visibility:visible}
+.stage.pin .word{position:absolute;left:50%;top:15vh;transform:translateX(calc(-50% + var(--wx,0)*1vw))}
+.stage.pin .obj{position:absolute;left:50%;top:50%;width:var(--w);margin:calc(var(--h)/-2 - 8vh) 0 0 calc(var(--w)/-2 + 9vw)}
+.stage.pin .copy{position:absolute;left:var(--gut);bottom:124px;max-width:min(34em,30vw)}
+.stage.pin .copy>*{transform:translateY(30px);opacity:0;transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .7s}
+.stage.pin .panel.on .copy>*{transform:none;opacity:1}
+.stage.pin .panel.on .copy>*:nth-child(2){transition-delay:.08s}
+.stage.pin .panel.on .copy>*:nth-child(3){transition-delay:.16s}
+.stage.pin .panel.on .copy>*:nth-child(4){transition-delay:.24s}
+.panel.open .sheet{display:block}
+.stage.pin .sheet{display:block;position:absolute;right:var(--gut);bottom:124px;width:min(480px,40vw);max-height:52vh;overflow:auto;opacity:0;visibility:hidden;transform:translateY(20px);transition:.35s}
+.stage.pin .panel.open .sheet{opacity:1;visibility:visible;transform:none}
+.stage.pin .stage-tabs{display:flex;position:absolute;z-index:3;left:var(--gut);right:var(--gut);bottom:30px;gap:10px}
+.stage-tabs button{flex:1;text-align:left;background:rgba(255,255,255,.1);color:#fff;border:0;border-radius:10px;padding:12px 16px 14px;position:relative;overflow:hidden;font-weight:700;font-size:15px;backdrop-filter:blur(10px);transition:background .3s,color .3s}
+.stage-tabs button small{display:block;font:700 13px/1.2 var(--display);letter-spacing:.14em;opacity:.8}
+.stage-tabs button[aria-current="true"]{background:#fff;color:var(--ink)}
+.stage-tabs button::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:calc(var(--f,0)*100%);background:var(--sig)}
+
+/* 선언 + 마키 */
+.say{background:linear-gradient(rgba(7,13,31,.74),rgba(7,13,31,.74)),url(img/hero-ship-s.webp) center/cover;color:#fff;padding:clamp(88px,12vw,170px) 0 0;overflow:hidden}
+.say p.big{padding:0 var(--gut);font-size:clamp(26px,4.4vw,58px);line-height:1.3;font-weight:700;letter-spacing:-.02em;max-width:22em}
+.say p.big em{font-style:normal;box-shadow:inset 0 -.12em 0 var(--sig)}
+.mq{margin-top:clamp(56px,9vw,130px);padding:0 0 clamp(20px,3vw,40px);white-space:nowrap;display:flex}
+.mq span{font:700 clamp(52px,10vw,150px)/1 var(--body);letter-spacing:-.02em;text-transform:uppercase;padding-right:.5em;color:#fff;animation:mq 40s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+
+/* 절차 */
+.proc{background:var(--mist)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;position:relative}
+.steps::before,.steps::after{content:"";position:absolute;left:0;top:27px;height:3px;border-radius:2px}
+.steps::before{right:0;background:var(--line)}
+.steps::after{width:calc(var(--p,0)*100%);background:var(--ink)}
+.steps li{position:relative;z-index:1;display:grid;gap:10px;align-content:start}
+.steps .n{width:56px;height:56px;border-radius:50%;background:#fff;border:3px solid var(--line);display:grid;place-items:center;font:800 24px/1 var(--display);transition:.4s}
+.steps li.on .n{background:var(--ink);border-color:var(--ink);color:#fff}
+.steps strong{font-size:20px;margin-top:10px}
+.steps span.d{color:var(--mute);font-size:15px}
+@media (max-width:820px){
+  .steps{grid-template-columns:1fr;gap:26px}
+  .steps::before,.steps::after{left:27px;top:0;width:3px;height:auto;bottom:0}
+  .steps::after{height:calc(var(--p,0)*100%);bottom:auto}
+  .steps li{grid-template-columns:56px 1fr;column-gap:18px}
+  .steps .n{grid-row:span 2}
+  .steps strong{margin-top:2px}
+}
+
+/* 적용 분야: 큰 사진 카드 */
+.apps{padding-right:0}
+.apps .sec-head,.apps .lead,.tbar{margin-right:var(--gut)}
+.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-right:var(--gut)}
+.track::-webkit-scrollbar{display:none}
+.fcard{position:relative;flex:0 0 min(76vw,900px);min-width:0;scroll-snap-align:start;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#071a2c;color:#fff}
+.fcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.fcard:hover img{transform:scale(1.05)}
+.fcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,13,31,.6),rgba(7,13,31,0) 46%)}
+.fcard div{position:absolute;z-index:1;left:clamp(20px,3vw,40px);top:clamp(18px,3vw,36px);right:20px}
+.fcard h3{font-size:clamp(20px,2.2vw,30px);font-weight:700}
+.fcard small{display:block;margin-top:6px;font-size:13px;letter-spacing:.06em;opacity:.85}
+.tbar{display:flex;align-items:center;gap:24px;margin-top:28px}
+.tprog{flex:1;height:2px;background:var(--line);position:relative}
+.tprog i{position:absolute;top:0;height:2px;background:var(--brand)}
+.arrows{display:flex;gap:10px}
+.arrows button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:18px;transition:.25s}
+.arrows button:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.apps .lead{margin-top:28px;color:var(--mute);max-width:40em}
+@media (max-width:820px){.fcard{flex-basis:84vw;aspect-ratio:4/3}}
+/* 떠 있는 구간 이동 버튼 */
+.qn{position:fixed;z-index:40;left:50%;bottom:22px;transform:translateX(-50%);transition:opacity .3s,visibility .3s}
+.qn.off,.totop.off{opacity:0;visibility:hidden}
+.qb{display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:210px;background:rgba(7,13,31,.92);color:#fff;border:0;border-radius:999px;padding:13px 18px 13px 24px;font-weight:600;font-size:15px;box-shadow:0 10px 30px rgba(7,13,31,.3)}
+.qb i{font-style:normal;font-size:22px;line-height:1;transition:transform .3s}
+.qb[aria-expanded="true"] i{transform:rotate(45deg)}
+.qm{position:absolute;bottom:calc(100% + 10px);left:0;right:0;background:rgba(7,13,31,.96);border-radius:16px;padding:8px;display:grid}
+.qm[hidden]{display:none}
+.qm a{color:#fff;text-decoration:none;padding:11px 16px;border-radius:10px;font-size:15px}
+.qm a:hover{background:rgba(255,255,255,.12)}
+.totop{position:fixed;z-index:40;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:18px;box-shadow:0 6px 20px rgba(7,13,31,.25);transition:opacity .3s,visibility .3s}
+
+/* 미군함 */
+.navy{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.nphoto{margin:0;border-radius:16px;overflow:hidden;aspect-ratio:4/3}
+.nphoto img{width:100%;height:100%;object-fit:cover}
+.ntext{display:grid;gap:18px}
+.ntext h2{font-size:clamp(20px,2.1vw,28px);line-height:1.4;font-weight:600;letter-spacing:-.01em}
+.ntext p{color:var(--mute);max-width:36em}
+.nfacts{list-style:none;margin:6px 0;padding:0;display:grid;gap:0;border-top:2px solid var(--ink)}
+.nfacts li{display:grid;grid-template-columns:minmax(0,220px) 1fr;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.nfacts b{font:800 clamp(20px,2.2vw,28px)/1.1 var(--display);letter-spacing:.04em;color:var(--brand)}
+.nacts{display:flex;flex-wrap:wrap;gap:12px}
+.btn.line{background:none;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+@media (max-width:820px){.navy{grid-template-columns:1fr}.nfacts li{grid-template-columns:1fr;gap:2px}}
+/* 항목 영상·사진 창 */
+#mv{border:0;border-radius:16px;padding:0;width:min(880px,92vw);background:#fff;color:var(--ink);box-shadow:0 30px 80px rgba(7,26,44,.45)}
+#mv::backdrop{background:rgba(7,26,44,.7)}
+.mvh{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;font:700 18px/1.3 var(--display);letter-spacing:.06em}
+.mvx{border:0;background:var(--mist);border-radius:50%;width:38px;height:38px;font-size:22px;line-height:1}
+#mvb{background:#071a2c;min-height:240px;display:grid;place-items:center}
+#mvb video,#mvb img{display:block;width:100%;max-height:72vh;object-fit:contain}
+.mvempty{color:#fff;opacity:.85;padding:48px 24px;text-align:center}
+.tag.us{background:#e3e9fb;color:var(--brand)}
+
+/* 서비스 비교 */
+.cmpwrap{overflow-x:auto}
+.cmp{width:100%;min-width:860px;border-collapse:collapse;table-layout:fixed}
+.cmp th,.cmp td{padding:18px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-weight:400;transition:background .3s}
+.cmp thead th{border-bottom:2px solid var(--ink);vertical-align:bottom}
+.cmp th[scope="row"]{width:120px;font:700 15px/1.4 var(--body);color:var(--mute)}
+.cmp .ph{height:130px;display:flex;align-items:flex-end;margin-bottom:14px}
+.cmp .ph img{max-height:130px;max-width:100%;width:auto;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cmp .on .ph img{transform:translateY(-8px) scale(1.06)}
+.cmp .en{display:block;font:600 12px/1.2 var(--body);letter-spacing:.08em;color:var(--mute);text-transform:uppercase}
+.cmp .nm{display:block;font-size:19px;font-weight:700;margin:4px 0 10px}
+.cmp .num{font:800 46px/1 var(--display);color:var(--brand);font-variant-numeric:tabular-nums}
+.cmp .tops{list-style:none;margin:0;padding:0;font:700 14px/1.5 var(--display);letter-spacing:.05em}
+.cmp .on{background:var(--mist)}
+.cmp .go{border:1px solid var(--ink);background:#fff;border-radius:999px;padding:7px 14px;font-weight:700;font-size:13px;transition:.25s}
+.cmp .go:hover{background:var(--ink);color:#fff}
+.cmpm{display:none}
+.cmpm .ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.cmpm .ct button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 10px;font-weight:600;font-size:14px;line-height:1.35;text-align:left}
+.cmpm .ct button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.cmpm .cc{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cmpm .cc[hidden]{display:none}
+.cmpm .cimg{background:var(--mist);height:180px;display:grid;place-items:center;padding:18px}
+.cmpm .cimg img{max-height:144px;max-width:86%;width:auto}
+.cmpm .cb{padding:18px}
+.cmpm .nm{font-size:20px;font-weight:700;margin:4px 0 14px;display:block}
+.cmpm dl{margin:0 0 18px;display:grid;grid-template-columns:84px 1fr;gap:0}
+.cmpm dt,.cmpm dd{margin:0;padding:11px 0;border-top:1px solid var(--line);font-size:15px}
+.cmpm dt{color:var(--mute);font-weight:600;font-size:14px}
+.cmpm .go{width:100%;justify-content:center}
+@media (max-width:820px){.cmpwrap{display:none}.cmpm{display:block}}
+.wm{background:#071a2c;overflow:hidden;padding-top:clamp(32px,6vw,80px);text-align:center}
+.wm span{display:block;font:800 19vw/.8 var(--xl);white-space:nowrap;letter-spacing:-.01em;color:rgba(255,255,255,.07)}
+
+/* 인증 */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:44px}
+.stat{background:#fff;padding:clamp(20px,3vw,40px)}
+.stat b{display:block;font:800 clamp(56px,9vw,128px)/.9 var(--display);color:var(--brand);font-variant-numeric:tabular-nums}
+.stat span{color:var(--mute);font-weight:500}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 22px;font-weight:700}
+.tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tp[hidden]{display:none}
+.rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:0 36px}
+.rows li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 4px;border-bottom:1px solid var(--line);font:700 17px/1.35 var(--display);letter-spacing:.04em;transition:padding .25s,color .25s}
+.rows li:hover{padding-left:14px;color:var(--brand)}
+.rows .scope{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.tag{font:500 13px/1 var(--body);letter-spacing:0;padding:6px 10px;border-radius:6px;background:var(--mist);color:var(--ink);white-space:nowrap}
+.tag.exp{background:#fde3e0;color:#9c1c12}
+.tag.soon{background:#fff0d6;color:#8a5200}
+.rows .cls{font-size:26px;font-weight:800}
+.hint{color:var(--mute);font-size:14px;margin-top:18px}
+
+/* 문의 */
+.contact{background:var(--ink);color:#fff}
+.contact .sec-head p{color:rgba(255,255,255,.75)}
+.cgrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.info{display:grid;gap:22px}
+.info dt{font:600 13px/1 var(--body);letter-spacing:.08em;color:rgba(255,255,255,.6);margin-bottom:8px}
+.info dd{margin:0;font-size:clamp(18px,1.9vw,24px);font-weight:500;overflow-wrap:anywhere}
+.info a{text-decoration:none}
+.info a:hover{text-decoration:underline}
+.maps{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.maps a{font-size:15px;padding:9px 18px;border-radius:999px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}
+form{background:#fff;color:var(--ink);border-radius:16px;padding:clamp(22px,3vw,40px);display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:700;font-size:14px}
+input,select,textarea{font:400 16px/1.5 var(--body);color:var(--ink);padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--mist);width:100%}
+textarea{min-height:120px;resize:vertical}
+.out{background:var(--mist);border-radius:12px;padding:16px;font-size:14px;display:grid;gap:10px}
+.out pre{margin:0;white-space:pre-wrap;font:400 14px/1.6 var(--body)}
+.out button{justify-self:start;border:1px solid var(--ink);background:#fff;border-radius:999px;padding:7px 16px;font-weight:700;font-size:14px}
+@media (max-width:820px){.cgrid{grid-template-columns:1fr}}
+footer{background:#071a2c;color:rgba(255,255,255,.7);padding:28px var(--gut);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:14px}
+footer strong{font:800 20px/1 var(--display);letter-spacing:.06em;color:#fff}
+
+.rv{opacity:.2;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hd" id="hd">
+  <a class="logo" href="#top" aria-label="SM KOREA 홈"><img src="img/logo-t.png" alt="SM KOREA 로고"><span>SM KOREA</span></a>
+  <button class="menu" id="menu" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav" aria-label="주요 메뉴">
+    <a href="#fields">적용 분야</a>
+    <a href="#navy">미군함</a>
+    <a href="#process">진행 절차</a>
+    <a href="#comparison">서비스</a>
+    <a href="#certificates">인증서</a>
+    <a href="#contact">문의</a>
+  </nav>
+  <div class="hr">
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ko" aria-pressed="true">KO</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <a class="cta" href="#contact">서비스 요청</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" id="hero" aria-label="대표 화면">
+  <div class="slide on"><img src="img/hero-lifeboat.webp" srcset="img/hero-lifeboat-s.webp 720w, img/hero-lifeboat.webp 1400w" sizes="100vw" fetchpriority="high" decoding="async" alt="선박 측면에 설치된 구명정과 데빗"></div>
+  <div class="slide"><img src="img/hero-ship.webp" srcset="img/hero-ship-s.webp 720w, img/hero-ship.webp 1200w" sizes="100vw" loading="lazy" decoding="async" alt="항해 중인 선박 측면에 줄지어 설치된 구명정"></div>
+  <div class="hero-copy">
+    <div class="hc on">
+      <h1 class="t">해양 안전의<br>믿음직한 파트너</h1>
+      <p>해양 산업을 위한 안전성, 신뢰성, 그리고 기술적 우수성.</p>
+      <div class="hero-acts"><a class="btn" href="#contact">서비스 요청하기</a><a class="btn ghost" href="#comparison">서비스 보기</a></div>
+    </div>
+    <div class="hc">
+      <p class="t">안전은 단순한 사업이 아니라<br>우리의 약속입니다</p>
+      <p>구명정과 소방설비(FFE)의 점검·정비, LOAD TEST까지 한 곳에서 처리합니다.</p>
+      <div class="hero-acts"><a class="btn" href="#contact">서비스 요청하기</a><a class="btn ghost" href="#certificates">인증 현황 보기</a></div>
+    </div>
+  </div>
+  <div class="hero-ctrl">
+    <button class="ar" id="hprev" type="button" aria-label="이전 슬라이드">&#8592;</button><button class="ar" id="hnext" type="button" aria-label="다음 슬라이드">&#8594;</button><button class="pp" id="pp" type="button" aria-label="슬라이드 일시정지"><i></i></button>
+    <div class="dots" id="dots"><button type="button" aria-label="1번 슬라이드" aria-current="true"></button><button type="button" aria-label="2번 슬라이드" aria-current="false"></button></div>
+  </div>
+  <a class="cue" href="#fields">SCROLL</a>
+</section>
+
+<section class="sec apps" id="fields">
+  <div class="sec-head rv">
+    <span class="eyebrow">Applications</span>
+    <h2>다양한 선종과 해양 시설의 안전 설비를 관리합니다</h2>
+  </div>
+  <div class="track" id="track" tabindex="0" aria-label="적용 분야 목록"></div>
+  <div class="tbar"><div class="tprog"><i id="tfill"></i></div><div class="arrows"><button type="button" id="fprev" aria-label="이전 분야">&#8592;</button><button type="button" id="fnext" aria-label="다음 분야">&#8594;</button></div></div>
+  <p class="lead">모든 선종에 구명정 점검·정비(연차검사, 5년차검사), 소방설비(FFE) 점검, 구명설비(LSA) 점검, LOAD TEST를 제공합니다.</p>
+</section>
+
+<section class="sec navy" id="navy">
+  <figure class="nphoto"><img src="img/field-2.webp" srcset="img/field-2-s.webp 640w, img/field-2.webp 1203w" sizes="(max-width:820px) 100vw, 45vw" width="1203" height="800" alt="항해 중인 군함" loading="lazy" decoding="async"></figure>
+  <div class="ntext">
+    <span class="eyebrow">U.S. Naval Vessels</span>
+    <h2>미군함의 구명·소방 설비 점검을 울산에서 지원합니다</h2>
+    <p>한국에서 정기 수리를 받는 미군함의 구명정, 소방설비(FFE), 구명설비(LSA) 점검과 LOAD TEST를 수행합니다. 입항 전에 미리 문의해 주시면 작업 범위와 일정을 안내해 드립니다.</p>
+    <ul class="nfacts">
+      <li><b>JOHNSON CONTROLS</b><span>미국 메이커 서비스 라이센스 보유</span></li>
+      <li><b>ABS</b><span>구명정·소방설비(FFE) 선급 승인</span></li>
+      <li><b>ULSAN</b><span>울산 남구 소재, 본선 점검과 자사 공장 테스트 병행</span></li>
+    </ul>
+    <div class="nacts"><a class="btn" href="#contact">서비스 요청하기</a><a class="btn line" href="#certificates">인증 현황 보기</a></div>
+  </div>
+</section>
+
+<section class="sec proc" id="process">
+  <div class="sec-head rv">
+    <span class="eyebrow">Process</span>
+    <h2>서비스 요청부터 완료 보고까지 5단계</h2>
+    <p>문의부터 완료 보고까지 단계별로 진행 상황을 공유합니다.</p>
+  </div>
+  <ol class="steps" id="steps">
+    <li><span class="n">1</span><strong>서비스 요청</strong><span class="d">선박 정보와 작업 내용을 접수합니다.</span></li>
+    <li><span class="n">2</span><strong>견적 안내</strong><span class="d">작업 범위와 일정, 비용을 안내합니다.</span></li>
+    <li><span class="n">3</span><strong>현장 점검</strong><span class="d">엔지니어가 설비 상태를 확인합니다.</span></li>
+    <li><span class="n">4</span><strong>검사</strong><span class="d">작동시험과 하중시험 등 항목별 검사를 수행합니다.</span></li>
+    <li><span class="n">5</span><strong>완료 보고</strong><span class="d">점검 결과서와 증빙 자료를 제출합니다.</span></li>
+  </ol>
+</section>
+
+<section class="sec" id="comparison">
+  <div class="sec-head rv">
+    <span class="eyebrow">Comparison</span>
+    <h2>SM KOREA가 하는 일</h2>
+    <p>구명정과 소방설비(FFE)의 점검·정비, LOAD TEST까지 한 곳에서 처리합니다. 네 가지 서비스를 나란히 비교해 보세요.</p>
+  </div>
+  <div class="cmpwrap" tabindex="0" aria-label="서비스 비교표"><table class="cmp" id="cmp"></table></div>
+  <div class="cmpm" id="cmpm"></div>
+</section>
+
+<section class="stage" id="services" aria-label="제공 서비스">
+  <div class="stage-intro">
+    <div class="sec-head rv">
+      <span class="eyebrow">Our Services</span>
+      <h2>구명정과 소방설비를 한 곳에서 관리하세요</h2>
+      <p>정기 검사 준비부터 수리까지 같은 팀이 맡습니다.</p>
+    </div>
+  </div>
+  <div class="rail"><div class="sticky" id="sticky"></div></div>
+</section>
+
+<section class="say">
+  <p class="big rv">SM KOREA에게 안전은 단순한 사업이 아니라 <em>우리의 약속</em>입니다.</p>
+  <div class="mq" aria-hidden="true"><span>Safety · Reliability · Technical Excellence · LSA &amp; FFE Service ·</span><span>Safety · Reliability · Technical Excellence · LSA &amp; FFE Service ·</span><span>Safety · Reliability · Technical Excellence · LSA &amp; FFE Service ·</span></div>
+</section>
+
+<section class="sec" id="certificates">
+  <div class="sec-head rv">
+    <span class="eyebrow">Certificates</span>
+    <h2>라이센스, 선급, 기국별 승인 및 인증 현황</h2>
+    <p>제조사 서비스 엔지니어 인증과 선급·기국 승인을 보유하고 있습니다.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b data-n="16">16</b><span>제조사 라이센스</span></div>
+    <div class="stat"><b data-n="9">9</b><span>선급 승인</span></div>
+    <div class="stat"><b data-n="3">3</b><span>기국 승인</span></div>
+  </div>
+  <div class="tabs" role="tablist" aria-label="인증 구분">
+    <button type="button" role="tab" id="t-lic" aria-controls="p-lic" aria-selected="true">라이센스</button>
+    <button type="button" role="tab" id="t-cls" aria-controls="p-cls" aria-selected="false">선급</button>
+    <button type="button" role="tab" id="t-flag" aria-controls="p-flag" aria-selected="false">기국</button>
+  </div>
+  <div class="tp" role="tabpanel" id="p-lic" aria-labelledby="t-lic"><ul class="rows" id="lic"></ul></div>
+  <div class="tp" role="tabpanel" id="p-cls" aria-labelledby="t-cls" hidden><ul class="rows" id="cls"></ul></div>
+  <div class="tp" role="tabpanel" id="p-flag" aria-labelledby="t-flag" hidden><ul class="rows" id="flag"></ul></div>
+  <p class="hint">증서 원본이 필요하시면 문의해 주세요.</p>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="sec-head rv">
+    <span class="eyebrow">Contact</span>
+    <h2>서비스 요청 및 견적 문의</h2>
+    <p>선박명과 작업 내용을 남겨 주시면 담당자가 확인 후 연락드립니다.</p>
+  </div>
+  <div class="cgrid">
+    <dl class="info">
+      <div><dt>TEL</dt><dd><a href="tel:+82527002848">+82-52-700-2848</a></dd></div>
+      <div><dt>FAX</dt><dd>+82-70-7543-7210</dd></div>
+      <div><dt>E-MAIL</dt><dd><a href="mailto:safe-marine@naver.com">safe-marine@naver.com</a></dd></div>
+      <div><dt>ADDRESS</dt><dd>59, Saneop-ro 382beon-gil, Nam-gu, Ulsan, Republic of Korea
+        <div class="maps"><a href="https://map.naver.com/p/search/%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%EC%82%B0%EC%97%85%EB%A1%9C382%EB%B2%88%EA%B8%B8%2059" target="_blank" rel="noopener">네이버 지도</a><a href="https://www.google.com/maps/search/?api=1&amp;query=59%20Saneop-ro%20382beon-gil%2C%20Nam-gu%2C%20Ulsan%2C%20Republic%20of%20Korea" target="_blank" rel="noopener">구글 지도</a></div></dd></div>
+    </dl>
+    <form id="f">
+      <label for="f-company">회사명<input id="f-company" name="company" required autocomplete="organization"></label>
+      <label for="f-contact">담당자 / 연락처<input id="f-contact" name="contact" required autocomplete="tel"></label>
+      <label for="f-type">서비스 종류
+        <select id="f-type" name="type"><option>구명정 점검·정비</option><option>소방설비(FFE) 점검</option><option>구명설비(LSA) 점검</option><option>LOAD TEST</option></select></label>
+      <label for="f-msg">선박명 / 입항 항구 / 요청 내용<textarea id="f-msg" name="msg" required></textarea></label>
+      <button class="btn" type="submit">견적 요청 메일 작성하기</button>
+      <div class="out" id="out" hidden>
+        <span>메일 앱이 열리지 않으면 아래 내용을 복사해 <b>safe-marine@naver.com</b> 으로 보내 주세요.</span>
+        <pre id="outpre"></pre>
+        <button type="button" id="copy">내용 복사</button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<div class="wm" aria-hidden="true"><span>SM KOREA</span></div>
+<div class="qn off" id="qn"><div class="qm" id="qm" hidden></div><button type="button" class="qb" id="qb" aria-expanded="false"><span id="ql"></span><i aria-hidden="true">+</i></button></div>
+<button type="button" class="totop off" id="totop" aria-label="맨 위로">&#8593;</button>
+<dialog id="mv" aria-labelledby="mvt"><div class="mvh"><strong id="mvt"></strong><button type="button" class="mvx" aria-label="닫기">&times;</button></div><div id="mvb"></div></dialog>
+<footer><strong>SM KOREA</strong><span>© 2026 SM KOREA. All rights reserved.</span></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+function clamp(v){return Math.max(0,Math.min(1,v))}
+
+/* ---------- 데이터 ---------- */
+var SERVICES=[
+{k:'lifeboat',en:'Lifeboat',ko:'구명정 점검·정비',d:'구명정 선체, 진수 장치, 엔진 및 훅 릴리즈 장치를 정기적으로 점검하고 정비합니다.',g:'radial-gradient(120% 90% at 70% 40%,#1b5a82 0%,#0d2f4a 55%,#071a2c 100%)',w:'min(54vw,104vh,960px)',r:1078/649,cls:'fade',anim:'sway',imgs:['svc-lifeboat-1.webp','svc-lifeboat-2.webp'],alt:'와이어에 매달린 주황색 밀폐형 구명정',
+ items:['ANNUAL THOROUGH EXAMINATION','5-YEAR THOROUGH EXAMINATION','LOAD TEST','WIRE REPLACEMENT','SPARE PARTS','REPAIR']},
+{k:'ffe',en:'FFE',ko:'소방설비(FFE) 점검',d:'소화기, 소화 배관, 소화 펌프, 화재 감지·경보 장치를 점검하고 성능을 확인합니다.',g:'radial-gradient(120% 90% at 70% 40%,#6a2420 0%,#33110f 55%,#170808 100%)',w:'min(40vw,62vh,640px)',r:715/750,cls:'',anim:'bob',imgs:['svc-ffe.webp'],alt:'붉은 CO2 소화 가스 실린더 6본과 매니폴드 배관',
+ items:['FIXED HIGH/LOW CO2 SYSTEM','FIXED HIGH/LOW FOAM SYSTEM','DRY CHEMICAL POWDER SYSTEM','WATER MIST SYSTEM','FM200 SYSTEM','HALON SYSTEM','NOVEC 1230 SYSTEM','INERGEN SYSTEM','FIRE DETECTION & ALARM SYSTEM','GALLEY DUCT SYSTEM','GALLEY DEEP FAT FRYER SYSTEM','FIRE EXTINGUISHER','FOAM APPLICATOR','E.E.B.D','S.C.B.A',"FIREMAN'S OUTFIT",'CHEMICAL SUIT','MEDICAL OXYGEN','AIR COMPRESSOR QUALITY']},
+{k:'lsa',en:'LSA',ko:'구명설비(LSA) 점검',d:'선박의 구명설비를 점검하고 성능을 확인합니다.',g:'radial-gradient(120% 90% at 70% 40%,#17635a 0%,#0b332f 55%,#061a18 100%)',w:'min(50vw,90vh,860px)',r:1103/720,cls:'',anim:'bob',imgs:['svc-lsa.webp'],alt:'주황색 구명부환과 구명조끼',
+ items:['IMMERSION SUIT','LIFE JACKET','LIFEBUOY','EMBARKATION LADDER','PILOT LADDER','THERMAL PROTECTIVE AID']},
+{k:'load',en:'Load Test',ko:'하중 시험 (LOAD TEST)',d:'구명정과 진수 장치의 하중 시험(Load Test)을 수행하고 결과 보고서를 제출합니다.',g:'radial-gradient(120% 90% at 70% 40%,#263f9c 0%,#111d55 55%,#080d2a 100%)',w:'min(30vw,37vh,400px)',r:516/1152,cls:'fade',anim:'sway',imgs:['svc-load.webp'],alt:'크레인 훅과 로드셀에 매달린 파란색 하중 시험 워터백',
+ items:['LIFEBOAT & DAVIT','HEAVY CRANE (UP TO 1,000 TONS)','PROVISION CRANE','MONORAIL CRANE','ENGINE ROOM OVERHEAD CRANE',['LOOSE GEAR EQUIPMENT','CHAIN BLOCK, LEVER BLOCK, EYE BOLT, SHACKLE, SLING, MASTER LINK, ETC'],'EMBARKATION LADDER','ACCOMMODATION LADDER','FALL ARRESTOR','RESCUE TRIPOD','PERSONNEL TRANSFER BASKET','CONTAINER SPREADER (20FT/40FT)']}
+];
+var FIELDS=[['MERCHANT VESSELS','상선·화물선'],['NAVAL VESSELS (U.S.)','미군함'],['SHIPYARDS','조선소 신조·수리'],['PASSENGER VESSELS','여객선'],['FISHING & WORK VESSELS','어선·작업선'],['TANKERS & CHEMICAL CARRIERS','유조선·화학제품선'],['OFFSHORE & PLATFORMS','해양플랜트·OFFSHORE'],['GOVERNMENT VESSELS','관공선·군함']];
+var LIC=[['JIANGYINSHI BEIHAI LSA CO., LTD.','2028-12-31'],['JIANGSU JIAOYAN MARINE EQUIPMENT CO., LTD.','2027-03-28'],['FASSMER-MARLAND CO., LTD.','2029-02-28'],['QINGDAO BEIHAI BOATBUILDING CO., LTD.','2027-06-27'],['NINGBO ASIA F.R.P BOAT MANUFACTURING CO., LTD.','2029-07-04'],['WUXI WENJIAO G.F.R.P FACTORY','2029-08-16'],['CSSC LUZHOU ZHENJIANG MARINE AUXILIARY MACHINERY CO., LTD.','2029-10-19'],['ZHEJIANG NORSIER LIFESAVING EQUIPMENT TECHNOLOGY CO., LTD.','2026-11-14'],['NINGBO NEW MARINE LIFESAVING EQUIPMENT CO., LTD.','2028-03-26'],['WUXI XINGSHENG GEAR CASE FACTORY','2027-06-24'],['WUXI MINGZI MACHINERY MANUFACTURING CO., LTD.','2029-07-04'],['ARIM ENG. & MACHINERY CO.','2029-03-06'],['ORIENTAL INSPECTION & SERVICE CO., LTD.','2028-09-18'],['CRALOG','2027-10-25'],['JOHNSON CONTROLS','2029-11-11'],['CRANE','2028-09-15']];
+var CLS=[['ABS',[['구명정','2029-01-29'],['소방설비(FFE)','2029-01-29']]],['BV',[['구명정','2028-12-29'],['소방설비(FFE)','2028-12-29'],['SCBA','2028-12-29']]],['DNV',[['구명정','2029-03-06'],['소방설비(FFE)','2029-03-02']]],['KR',[['구명정','2028-06-08'],['소방설비(FFE)','2028-06-08']]],['LR',[['구명정','2029-01-19'],['소방설비(FFE)','2029-01-19']]],['NK',[['구명정','2027-11-30'],['소방설비(FFE)','2027-11-21']]],['RS',[['구명정','2029-05-14'],['소방설비(FFE)','2029-05-14']]],['IRS',[['구명정','2029-09-03'],['소방설비(FFE)','2029-09-11']]],['RINA',[['구명정','2029-02-07'],['소방설비(FFE)','2029-02-07']]]];
+var FLAG=[['PANAMA','2028-09-29'],['BAHAMAS','2028-08-04'],['LIBERIA','2028-05-22']];
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function badge(until){var d=(new Date(until+'T23:59:59')-new Date())/864e5;return d<0?'<span class="tag exp">유효기간 만료</span>':(d<120?'<span class="tag soon">만료 임박</span>':'')}
+
+/* ---------- 헤더 ---------- */
+var hd=$('#hd'),nav=$('#nav'),menu=$('#menu');
+menu.addEventListener('click',function(){var o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o);if(o)hd.classList.add('solid');else onScroll()});
+nav.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+
+/* ---------- 히어로 슬라이드 ---------- */
+var hero=$('#hero'),slides=$$('.slide',hero),caps=$$('.hc',hero),dots=$$('#dots button'),pp=$('#pp'),cur=0,timer=null,paused=RM;
+function go(i){cur=(i+slides.length)%slides.length;slides.forEach(function(s,j){s.classList.toggle('on',j===cur)});caps.forEach(function(s,j){s.classList.toggle('on',j===cur)});dots.forEach(function(d,j){d.setAttribute('aria-current',j===cur)})}
+function play(){clearInterval(timer);if(!paused)timer=setInterval(function(){go(cur+1)},6500)}
+function setPaused(p){paused=p;pp.classList.toggle('paused',p);pp.setAttribute('aria-label',p?'슬라이드 재생':'슬라이드 일시정지');play()}
+dots.forEach(function(d,j){d.addEventListener('click',function(){go(j);play()})});
+pp.addEventListener('click',function(){setPaused(!paused)});
+$('#hprev').addEventListener('click',function(){go(cur-1);play()});$('#hnext').addEventListener('click',function(){go(cur+1);play()});
+setPaused(paused);
+if(!RM)hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5)*2);hero.style.setProperty('--my',((e.clientY-r.top)/r.height-.5)*2)});
+
+/* ---------- 서비스 무대 ---------- */
+var stage=$('#services'),sticky=$('#sticky'),rail=$('.rail',stage);
+var WEIGHT=[2,1,1,1],WSUM=5;
+sticky.innerHTML=SERVICES.map(function(s,i){
+  return '<article class="panel'+(i===0?' on':'')+'" style="--g:'+s.g+'"><div class="word" aria-hidden="true">'+esc(s.en)+'</div><div class="obj '+s.cls+'" style="--w:'+s.w+';--h:calc('+s.w+' / '+s.r.toFixed(4)+')"><div class="tilt"><div class="'+s.anim+'">'+s.imgs.map(function(f,j){return '<img class="'+(j?'b':'a')+'" loading="lazy" decoding="async" src="img/'+f+'" alt="'+(j?'':esc(s.alt))+'"'+(j?' aria-hidden="true"':'')+'>'}).join('')+'</div></div></div><div class="copy"><span class="eyebrow">Service 0'+(i+1)+' / 04</span><h3>'+esc(s.ko)+'</h3><p>'+esc(s.d)+'</p><button type="button" class="more" aria-expanded="false">점검 항목 '+s.items.length+'개 보기</button>'+(i===0?'<button type="button" class="vid">스프링클러 수막 탈출 영상</button>':'')+'</div><div class="sheet"><h4>SCOPE</h4><p class="tip">항목을 누르면 작동 영상·사진이 열립니다</p><ul class="chips">'+s.items.map(function(t){var n=Array.isArray(t)?t[0]:t;return '<li><button type="button" data-item="'+esc(n)+'">'+esc(n)+(Array.isArray(t)?' <small>('+esc(t[1])+')</small>':'')+'</button></li>'}).join('')+'</ul></div></article>'
+}).join('')+'<button type="button" class="skip">이 구간 건너뛰기 &#8595;</button><div class="stage-tabs">'+SERVICES.map(function(s,i){return '<button type="button" aria-current="'+(i===0)+'"><small>0'+(i+1)+'</small>'+esc(s.ko)+'</button>'}).join('')+'</div>';
+var panels=$$('.panel',sticky),tabs=$$('.stage-tabs button',sticky),tilts=$$('.tilt',sticky),N=panels.length;
+var mqPin=window.matchMedia('(min-width:900px) and (min-height:640px)');
+var bgs=[],glTried=false,inView=false;
+var glLoad=0;
+function loadGL(){if(glLoad)return;glLoad=1;var a=document.createElement('script');a.src='vendor/three.min.js';a.onload=function(){var b=document.createElement('script');b.src='scene.js';b.onload=function(){setPin()};document.body.appendChild(b)};document.body.appendChild(a)}
+function setupGL(){
+  if(glTried||!window.SMScene)return;glTried=true;
+  var bw=document.createElement('div');bw.className='bgs';bw.innerHTML=SERVICES.map(function(s,i){return '<div class="'+(i===0?'on':'')+'" style="--g:'+s.g+'"><div class="word" aria-hidden="true">'+esc(s.en)+'</div></div>'}).join('');
+  var hot=document.createElement('div');hot.className='hot';
+  var hint=document.createElement('div');hint.className='draghint';hint.textContent='드래그하면 직접 돌려 볼 수 있습니다';
+  sticky.insertBefore(bw,sticky.firstChild);sticky.appendChild(hot);sticky.appendChild(hint);
+  if(window.SMScene.start(sticky,hot))bgs=$$('.bgs>div',sticky);
+}
+function syncGL(){var on=stage.classList.contains('pin')&&window.SMScene&&window.SMScene.ok;stage.classList.toggle('gl',!!on);if(window.SMScene&&window.SMScene.ok)window.SMScene.run(!!on&&inView)}
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){inView=es[0].isIntersecting;syncGL()},{rootMargin:'200px'}).observe(rail);new IntersectionObserver(function(es,o){if(es[0].isIntersecting){o.disconnect();if(mqPin.matches&&!RM)loadGL()}},{rootMargin:'1500px'}).observe(stage)}else{inView=true;loadGL()}
+function setPin(){stage.classList.toggle('pin',mqPin.matches&&!RM);if(stage.classList.contains('pin'))setupGL();syncGL();if(!stage.classList.contains('pin'))panels.forEach(function(p){['--sx','--sy','--sc','--sr','--ab','--wx'].forEach(function(v){p.style.removeProperty(v)})});onScroll()}
+function segStart(i){var a=0;for(var k=0;k<i;k++)a+=WEIGHT[k];return a/WSUM}
+tabs.forEach(function(b,i){b.addEventListener('click',function(){var top=rail.getBoundingClientRect().top+window.scrollY,span=rail.offsetHeight-window.innerHeight;window.scrollTo({top:top+span*(segStart(i)+WEIGHT[i]/WSUM*.3),behavior:RM?'auto':'smooth'})})});
+$('.skip',sticky).addEventListener('click',function(){window.scrollTo({top:stage.getBoundingClientRect().top+window.scrollY+stage.offsetHeight-72,behavior:RM?'auto':'smooth'})});
+$$('.more',sticky).forEach(function(b){b.addEventListener('click',function(){var p=b.closest('.panel'),o=p.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'점검 항목 닫기':'점검 항목 '+p.querySelectorAll('.chips li').length+'개 보기'})});
+if(!RM)sticky.addEventListener('pointermove',function(e){var r=sticky.getBoundingClientRect(),x=((e.clientX-r.left)/r.width-.5)*2,y=((e.clientY-r.top)/r.height-.5)*2;tilts.forEach(function(a){a.style.setProperty('--tx',x);a.style.setProperty('--ty',y)})});
+
+/* ---------- 서비스 비교 ---------- */
+var CMP=[
+ {tg:'구명정 선체, 진수 장치, 엔진, 훅 릴리즈 장치',top:['ANNUAL THOROUGH EXAMINATION','5-YEAR THOROUGH EXAMINATION','WIRE REPLACEMENT']},
+ {tg:'소화기, 소화 배관, 소화 펌프, 화재 감지·경보 장치',top:['FIXED HIGH/LOW CO2 SYSTEM','WATER MIST SYSTEM','FIRE DETECTION & ALARM SYSTEM']},
+ {tg:'선박의 구명설비',top:['IMMERSION SUIT','LIFE JACKET','LIFEBUOY']},
+ {tg:'구명정과 진수 장치, 크레인',top:['LIFEBOAT & DAVIT','HEAVY CRANE (UP TO 1,000 TONS)','LOOSE GEAR EQUIPMENT']}];
+function row(h,fn){return '<tr><th scope="row">'+h+'</th>'+SERVICES.map(function(s,i){return '<td data-c="'+i+'">'+fn(s,i)+'</td>'}).join('')+'</tr>'}
+$('#cmp').innerHTML='<thead><tr><th></th>'+SERVICES.map(function(s,i){return '<th scope="col" data-c="'+i+'"><div class="ph"><img src="img/'+s.imgs[0]+'" alt="" loading="lazy"></div><span class="en">'+esc(s.en)+'</span><span class="nm">'+esc(s.ko)+'</span><button type="button" class="go" data-go="'+i+'">3D로 보기</button></th>'}).join('')+'</tr></thead><tbody>'+
+ row('점검 대상',function(s,i){return esc(CMP[i].tg)})+
+ row('세부 항목',function(s){return '<span class="num">'+s.items.length+'</span> 개'})+
+ row('대표 항목',function(s,i){return '<ul class="tops">'+CMP[i].top.map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul>'})+
+ row('적용 선종',function(){return '모든 선종'})+
+ row('완료 보고',function(){return '점검 결과서와 증빙 자료'})+'</tbody>';
+var cmpEl=$('#cmp');
+function cmpOn(c){$$('[data-c]',cmpEl).forEach(function(e){e.classList.toggle('on',e.getAttribute('data-c')===c)})}
+cmpEl.addEventListener('mouseover',function(e){var c=e.target.closest('[data-c]');if(c)cmpOn(c.getAttribute('data-c'))});
+cmpEl.addEventListener('focusin',function(e){var c=e.target.closest('[data-c]');if(c)cmpOn(c.getAttribute('data-c'))});
+cmpEl.addEventListener('click',function(e){var b=e.target.closest('.go');if(!b)return;var i=+b.getAttribute('data-go');if(stage.classList.contains('pin'))tabs[i].click();else panels[i].scrollIntoView({behavior:RM?'auto':'smooth'})});
+cmpOn('0');
+var cmpm=$('#cmpm');
+cmpm.innerHTML='<div class="ct" role="tablist">'+SERVICES.map(function(s,i){return '<button type="button" role="tab" aria-selected="'+(i===0)+'" data-t="'+i+'">'+esc(s.ko)+'</button>'}).join('')+'</div>'+SERVICES.map(function(s,i){
+  return '<div class="cc"'+(i?' hidden':'')+'><div class="cimg"><img src="img/'+s.imgs[0]+'" alt="" loading="lazy"></div><div class="cb"><span class="nm">'+esc(s.ko)+'</span><dl><dt>점검 대상</dt><dd>'+esc(CMP[i].tg)+'</dd><dt>세부 항목</dt><dd><b>'+s.items.length+'</b> 개</dd><dt>대표 항목</dt><dd>'+CMP[i].top.map(esc).join('<br>')+'</dd><dt>적용 선종</dt><dd>모든 선종</dd><dt>완료 보고</dt><dd>점검 결과서와 증빙 자료</dd></dl><button type="button" class="btn go" data-go="'+i+'">자세히 보기</button></div></div>'}).join('');
+cmpm.addEventListener('click',function(e){
+  var t=e.target.closest('[data-t]');if(t){var k=+t.getAttribute('data-t');$$('[data-t]',cmpm).forEach(function(b,j){b.setAttribute('aria-selected',j===k)});$$('.cc',cmpm).forEach(function(c,j){c.hidden=j!==k});return}
+  var b=e.target.closest('.go');if(b){var el=panels[+b.getAttribute('data-go')],y=el.getBoundingClientRect().top+window.scrollY-72;window.scrollTo({top:y,behavior:RM?'auto':'smooth'})}});
+
+/* ---------- 적용 분야 ---------- */
+var track=$('#track'),tfill=$('#tfill');
+track.innerHTML=FIELDS.map(function(f,i){return '<div class="fcard"><img src="img/field-'+(i+1)+'.webp" srcset="img/field-'+(i+1)+'-s.webp 640w, img/field-'+(i+1)+'.webp 1203w" sizes="(max-width:820px) 84vw, 900px" width="1203" height="800" alt="" loading="lazy" decoding="async"><div><h3>'+esc(f[1])+'</h3><small>'+esc(f[0])+'</small></div></div>'}).join('');
+function slideBy(d){var c=$('.fcard',track);track.scrollBy({left:d*(c.offsetWidth+20),behavior:RM?'auto':'smooth'})}
+$('#fprev').addEventListener('click',function(){slideBy(-1)});$('#fnext').addEventListener('click',function(){slideBy(1)});
+track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){slideBy(1);e.preventDefault()}if(e.key==='ArrowLeft'){slideBy(-1);e.preventDefault()}});
+function tsync(){var m=track.scrollWidth-track.clientWidth,v=track.clientWidth/track.scrollWidth;tfill.style.width=(v*100)+'%';tfill.style.left=((m>0?track.scrollLeft/m:0)*(1-v)*100)+'%'}
+track.addEventListener('scroll',tsync,{passive:true});window.addEventListener('resize',tsync);tsync();
+
+/* ---------- 인증 ---------- */
+$('#lic').innerHTML=LIC.map(function(l){return '<li><span>'+esc(l[0])+'</span><span class="scope">'+(l[0]==='JOHNSON CONTROLS'?'<span class="tag us">미국 메이커</span>':'')+badge(l[1])+'</span></li>'}).join('');
+$('#cls').innerHTML=CLS.map(function(c){return '<li><span class="cls">'+c[0]+'</span><span class="scope">'+c[1].map(function(x){return '<span class="tag">'+esc(x[0])+'</span>'+badge(x[1])}).join('')+'</span></li>'}).join('');
+$('#flag').innerHTML=FLAG.map(function(c){return '<li><span class="cls">'+c[0]+'</span><span class="scope"><span class="tag">기국 승인</span>'+badge(c[1])+'</span></li>'}).join('');
+var tb=$$('.tabs [role=tab]');
+tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(o){var on=o===b;o.setAttribute('aria-selected',on);$('#'+o.getAttribute('aria-controls')).hidden=!on})})});
+
+/* ---------- 스크롤 연동 ---------- */
+var steps=$('#steps'),stepLis=$$('li',steps),secs=['fields','navy','process','comparison','services','certificates','contact'].map(function(id){return document.getElementById(id)}),links=$$('#nav a'),tick=false;
+var qn=$('#qn'),ql=$('#ql'),qb=$('#qb'),qm=$('#qm'),totop=$('#totop');
+qm.innerHTML=links.map(function(a){return '<a href="'+a.getAttribute('href')+'">'+esc(a.textContent)+'</a>'}).join('');
+qb.addEventListener('click',function(){var o=qm.hidden;qm.hidden=!o;qb.setAttribute('aria-expanded',o)});
+qm.addEventListener('click',function(e){if(e.target.closest('a')){qm.hidden=true;qb.setAttribute('aria-expanded','false')}});
+totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:RM?'auto':'smooth'})});
+function onScroll(){
+  var y=window.scrollY,vh=window.innerHeight;
+  if(!nav.classList.contains('open'))hd.classList.toggle('solid',y>vh*.6);
+  if(stage.classList.contains('pin')){
+    var r=rail.getBoundingClientRect(),p=clamp(-r.top/(r.height-vh)),idx=N-1,loc=1;
+    for(var i=0;i<N;i++){var s0=segStart(i),s1=s0+WEIGHT[i]/WSUM;if(p<s1){idx=i;loc=(p-s0)/(s1-s0);break}}
+    panels.forEach(function(el,i){el.classList.toggle('on',i===idx)});
+    tabs.forEach(function(b,i){b.setAttribute('aria-current',i===idx);b.style.setProperty('--f',i<idx?1:(i===idx?loc:0))});
+    var el=panels[idx],e=loc-.5,ab=clamp((loc-.38)/.24);
+    el.style.setProperty('--sx',(-e*26).toFixed(2));
+    el.style.setProperty('--sy',(Math.abs(e)*-6+2).toFixed(2));
+    el.style.setProperty('--sc',(1.06-Math.abs(e)*.3).toFixed(3));
+    el.style.setProperty('--sr',(e*-5).toFixed(2));
+    el.style.setProperty('--wx',(e*34).toFixed(2));
+    el.style.setProperty('--ab',idx===0?(ab*ab*(3-2*ab)).toFixed(3):0);
+    if(bgs.length){bgs.forEach(function(b,i){b.classList.toggle('on',i===idx)});bgs[idx].style.setProperty('--wx',(e*34).toFixed(2));window.SMScene.set(idx,loc)}
+  }
+  var sr=steps.getBoundingClientRect(),sp=clamp((vh*.8-sr.top)/(sr.height+vh*.35));
+  if(RM)sp=1;
+  steps.style.setProperty('--p',sp);
+  stepLis.forEach(function(li,i){li.classList.toggle('on',sp>=(i+.35)/stepLis.length)});
+  var active=null;secs.forEach(function(s){if(s.getBoundingClientRect().top<vh*.45)active=s.id});
+  var inStage=active==='services';
+  if(active==='services')active='comparison';
+  links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+active&&!a.classList.contains('btn'))});
+  var curL=null;links.forEach(function(a){if(a.getAttribute('href')==='#'+active)curL=a});
+  var showQ=y>vh*.6&&curL&&!inStage;qn.classList.toggle('off',!showQ);if(!showQ&&!qm.hidden){qm.hidden=true;qb.setAttribute('aria-expanded','false')}
+  if(curL&&ql.textContent!==curL.textContent)ql.textContent=curL.textContent;
+  totop.classList.toggle('off',y<vh||inStage);
+  tick=false;
+}
+window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});
+window.addEventListener('resize',onScroll);
+if(mqPin.addEventListener)mqPin.addEventListener('change',setPin);
+setPin();
+
+/* ---------- 등장 효과 / 숫자 카운트 ---------- */
+if('IntersectionObserver' in window&&!RM){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});
+  $$('.rv').forEach(function(e){io.observe(e)});
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var el=e.target,n=+el.getAttribute('data-n'),t0=null;
+    function f(t){if(!t0)t0=t;var k=clamp((t-t0)/1100);el.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)})},{threshold:.6});
+  $$('[data-n]').forEach(function(e){co.observe(e)});
+}else{$$('.rv').forEach(function(e){e.classList.add('in')})}
+
+/* ---------- 항목 영상·사진 ---------- */
+/* media 폴더에 <항목 이름>.mp4 또는 .jpg 파일이 있으면 보여 주고, 없으면 준비 중 안내를 띄운다 */
+var mv=$('#mv'),mvT=$('#mvt'),mvB=$('#mvb');
+function slug(t){return t.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function openMedia(title,base){
+  mvT.textContent=title;mvB.innerHTML='';
+  var v=document.createElement('video');v.controls=true;v.playsInline=true;
+  v.addEventListener('error',function(){var im=new Image();im.alt=title;
+    im.onload=function(){mvB.innerHTML='';mvB.appendChild(im)};
+    im.onerror=function(){mvB.innerHTML='<p class="mvempty">'+(window.SMLANG==='en'?'Video and photos for this item are being prepared.':'이 항목의 영상·사진은 준비 중입니다.')+'</p>'};
+    im.src='media/'+base+'.jpg'});
+  v.src='media/'+base+'.mp4';mvB.appendChild(v);
+  if(mv.showModal){if(!mv.open)mv.showModal()}else mv.setAttribute('open','');
+}
+function closeMedia(){mvB.innerHTML='';if(mv.close)mv.close();else mv.removeAttribute('open')}
+document.addEventListener('click',function(e){
+  var it=e.target.closest('[data-item]');if(it){openMedia(it.getAttribute('data-item'),slug(it.getAttribute('data-item')));return}
+  if(e.target.closest('.vid')){openMedia('LIFEBOAT SPRINKLER SYSTEM','lifeboat-sprinkler');return}
+  if(e.target===mv||e.target.closest('.mvx'))closeMedia();
+});
+mv.addEventListener('close',function(){mvB.innerHTML=''});
+
+/* ---------- 문의 ---------- */
+var out=$('#out'),pre=$('#outpre');
+$('#f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var d=new FormData(e.target),en=window.SMLANG==='en',subject=(en?'[Quotation Inquiry] ':'[견적 문의] ')+d.get('type'),body=(en?'Company: ':'회사명: ')+d.get('company')+(en?'\nContact: ':'\n연락처: ')+d.get('contact')+(en?'\nService: ':'\n서비스: ')+d.get('type')+'\n\n'+d.get('msg');
+  pre.textContent=(en?'Subject: ':'제목: ')+subject+'\n\n'+body;out.hidden=false;
+  try{location.href='mailto:safe-marine@naver.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)}catch(err){}
+});
+$('#copy').addEventListener('click',function(){var b=this;try{navigator.clipboard.writeText(pre.textContent).then(function(){b.textContent='복사했습니다'},function(){b.textContent='복사하지 못했습니다. 직접 선택해 복사해 주세요'})}catch(err){b.textContent='복사하지 못했습니다. 직접 선택해 복사해 주세요'}});
+})();
+</script>
+<script src="i18n.js"></script>
+</body>
+</html>
