@@ -77,8 +77,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 }
 
 /* 히어로 */
-.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:var(--ink);color:#fff;--mx:0;--my:0}
-.slide{position:absolute;inset:-16px;opacity:0;transition:opacity 1.2s;transform:translate(calc(var(--mx)*-14px),calc(var(--my)*-10px))}
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:var(--ink);color:#fff}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s}
 .slide.on{opacity:1}
 .slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
 .slide.on img{animation:kb 9s ease-out forwards}
@@ -561,7 +561,6 @@ dots.forEach(function(d,j){d.addEventListener('click',function(){go(j);play()})}
 pp.addEventListener('click',function(){setPaused(!paused)});
 $('#hprev').addEventListener('click',function(){go(cur-1);play()});$('#hnext').addEventListener('click',function(){go(cur+1);play()});
 setPaused(paused);
-if(!RM)hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5)*2);hero.style.setProperty('--my',((e.clientY-r.top)/r.height-.5)*2)});
 
 /* ---------- 서비스 무대 ---------- */
 var stage=$('#services'),sticky=$('#sticky'),rail=$('.rail',stage);
